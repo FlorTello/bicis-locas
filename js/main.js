@@ -6,8 +6,6 @@ function validateForm(){
 	var email = document.getElementById('input-email');
 	var password = document.getElementById('input-password');
 	var opcion = document.getElementsByClassName('form-control')[4];
-	var checkbox = document.getElementById('checkbox');
-	var inputSocial = document.getElementById('input-social');
 	//Expresiones Regulares
 	var ExpNombre = /([A-ZÁÉÍÓÚ][a-zñáéíóú]+[\s]*)+$/;
 	var ExpEmail = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
@@ -32,9 +30,7 @@ function validateForm(){
 	
 	//console.log(firstNombre.join(''));
 	//console.log(arrayNombre);
-	var stringNombre = name.value.charAt(0).toUpperCase() + name.value.substring(1).toLowerCase();
-	var stringApellido = lastname.value.charAt(0).toUpperCase() + lastname.value.substring(1);
-	console.log(stringNombre);
+
 	//Condicines a validar 
 	if(name.value == "" || ExpNombre.test(name.value) == false || firstNombre.join('') !== arrayNombre){
 		error = "Debe Escribir un Nombre valido \n";
@@ -48,7 +44,7 @@ function validateForm(){
 		error = "El Email debe ser Valido Ejm. name@domain.com \n";
 		email.focus();
 	}
-	else if(password.value == "" || password.value.length < 6 || password.value == '123456' || password.value == '098754'){
+	else if(password.value == "" || password.value.length < 6 || password.value == '123456' || password.value == '098754' || password.value == 'password'){
 		error = "El Password debe tener al menos 6 caracteres o diferente\n";
 		password.focus();
 	}
@@ -56,6 +52,7 @@ function validateForm(){
 		error = "Debe seleccionar una Bici\n";
 		opcion.focus();
 	}
-	else error = "SIn errores puede continuar";	
+	else error = "Sin errores puede continuar";	
+	// Imprimiendo los errores
 	alert(error);
 }
