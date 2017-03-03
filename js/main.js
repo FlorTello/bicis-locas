@@ -33,15 +33,15 @@ function validateForm(){
 
 	//Condicines a validar 
 	if(name.value == "" || ExpNombre.test(name.value) == false || firstNombre.join('') !== arrayNombre){
-		error = "Debe Escribir un Nombre valido \n";
+		error = "Debe Escribir un Nombre valido \n La primera letra debe empezar con mayuscula";
 		name.focus();
 	}
 	else if(lastname.value == "" || ExpNombre.test(lastname.value) == false || firstLastname.join('') !== arrayLastName){
-		error = "Debe Escribir Apellido valido\n";
+		error = "Debe Escribir Apellido valido\n La primera letra debe empezar con mayuscula";
 		lastname.focus();
 	}
 	else if(email.value == "" || !ExpEmail.test(email.value)){
-		error = "El Email debe ser Valido Ejm. name@domain.com \n";
+		error = "El Email debe ser Valido Ejm. name@domain.com \n ";
 		email.focus();
 	}
 	else if(password.value == "" || password.value.length < 6 || password.value == '123456' || password.value == '098754' || password.value == 'password'){
